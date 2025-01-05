@@ -7,7 +7,7 @@ SQLmap-like is a Python-based SQL Injection scanning tool inspired by sqlmap, de
 
 **Developed by:**
 - Omeiri
-- Hezil
+- Hezil adem yahia
 - Rezig
 
 This tool was created as an educational exercise to understand the mechanics of SQL injection testing and automated security assessment tools. While inspired by SQLmap, it serves as a learning implementation with a focused feature set.
