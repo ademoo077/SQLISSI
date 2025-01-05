@@ -1,14 +1,35 @@
-# SQLmap-like Tool
+# SQLmap-like Tool 🛡️
 
-![SQLmap-like](https://img.shields.io/badge/Python-3.8%2B-blue) ![License](https://img.shields.io/badge/License-MIT-green)
+<div align="center">
 
-SQLmap-like is a Python-based SQL Injection scanning tool inspired by sqlmap, developed as a university project. This educational tool replicates core functionalities of the popular SQLmap while offering flexibility, customization, and enhanced usability for penetration testers and ethical hackers. It also serves as a learning platform to understand SQL injection testing concepts. ⚠️ Use this tool responsibly and only in environments where you have explicit permission.---
+![SQLmap-like](https://img.shields.io/badge/Python-3.8%2B-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Development Status](https://img.shields.io/badge/Status-Active-success)
+![Security](https://img.shields.io/badge/Security-Pentest-red)
+![Last Commit](https://img.shields.io/badge/Last%20Commit-2024-orange)
+
+*A powerful SQL injection testing framework built for modern security professionals*
+
+[Key Features](#features) •
+[Installation](#installation) •
+[Quick Start](#quick-start) •
+[Documentation](#documentation) •
+[Contributing](#contributing)
+
+</div>
+---
+
+## 🎯 Overview
+
+SQLmap-like is a Python-based SQL Injection scanning tool inspired by sqlmap, developed as a university project. This educational tool replicates core functionalities of the popular SQLmap while offering flexibility, customization, and enhanced usability for penetration testers and ethical hackers. It also serves as a learning platform to understand SQL injection testing concepts. ⚠️ Use this tool responsibly and only in environments where you have explicit permission.
+
+---
 ## Project Information
 
 **Developed by:**
-- Hezil adem yahia
-- Omeiri
-- Rezig
+- Hezil Adem
+- Omeiri Abdellah
+- Rezig Nasim
 
 This tool was created as an educational exercise to understand the mechanics of SQL injection testing and automated security assessment tools. While inspired by SQLmap, it serves as a learning implementation with a focused feature set.
 
@@ -16,7 +37,7 @@ This tool was created as an educational exercise to understand the mechanics of 
 
 ## **Features**
 
-- Supports both `GET` and `POST` HTTP methods.
+- Supports both GET and POST HTTP methods.
 - Multiple SQL Injection testing techniques (e.g., blind, union-based, and time-based).
 - URL crawling to discover hidden endpoints.
 - Proxy support for anonymity.
@@ -24,12 +45,34 @@ This tool was created as an educational exercise to understand the mechanics of 
 - Export results in **JSON** or **HTML** formats.
 
 ---
-## Requirements
+## 🛠️ Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/ademoo077/SQLISSI
+
+# Navigate to the project directory
+cd SQLISSI
+
+# Install required dependencies
 pip install -r requirements.txt
 ```
 
+## 💻 Quick Start
+
+Basic vulnerability scan:
+```bash
+python scanqli.py -u "http://target.com/page.php?id=1" -p id
+```
+
+Advanced scan with all features:
+```bash
+python scanqli.py -u "http://target.com" -p id \
+    --crawl --depth 3 \
+    --tests union blind timebase \
+    --threads 20 \
+    --output scan_results.html
+```
 
 ## Usage
 
@@ -37,28 +80,25 @@ Basic command structure:
 ```bash
 python scanqli.py -u <target_url> -p <parameter> [options]
 ```
+
 ### **Options**
 
 | **Argument**              | **Required** | **Description**                                                                                  |
 |---------------------------|--------------|--------------------------------------------------------------------------------------------------|
-| `-u`, `--url`             | Yes          | Target URL to scan (e.g., `http://example.com/page.php?id=1`).                                   |
-| `-p`, `--param`           | Yes          | Vulnerable parameter to test (e.g., `id`).                                                      |
-| `-m`, `--method`          | No           | HTTP method to use (`GET` or `POST`). Default: `GET`.                                           |
-| `-t`, `--threads`         | No           | Number of concurrent threads. Default: `10`.                                                   |
-| `--timeout`               | No           | Timeout for HTTP requests in seconds. Default: `10`.                                            |
-| `--proxies`               | No           | Proxy URL (e.g., `http://127.0.0.1:8080`).                                                      |
-| `--user-agents`           | No           | Rotate through a list of custom User-Agents.                                                   |
-| `-o`, `--output`          | No           | Output file to save results (`.json` or `.html`).                                               |
-| `--crawl`                 | No           | Enable crawling to discover additional URLs.                                                   |
-| `--depth`                 | No           | Crawling depth. Default: `2`.                                                                   |
-| `--tests`                 | No           | Specific tests to run (e.g., `basic`, `union`, `blind`). Default: all tests.                    |
-| `--db`                    | No           | Target a specific database.                                                                     |
-| `--tbl`                   | No           | Target a specific table.                                                                        |
-| `--post-data`             | No           | POST data in `key=value&key2=value2` format. Required if `--method POST` is used.               |
-
-
-
-
+| -u, --url             | Yes          | Target URL to scan (e.g., http://example.com/page.php?id=1).                                   |
+| -p, --param           | Yes          | Vulnerable parameter to test (e.g., id).                                                      |
+| -m, --method          | No           | HTTP method to use (GET or POST). Default: GET.                                           |
+| -t, --threads         | No           | Number of concurrent threads. Default: 10.                                                   |
+| --timeout               | No           | Timeout for HTTP requests in seconds. Default: 10.                                            |
+| --proxies               | No           | Proxy URL (e.g., http://127.0.0.1:8080).                                                      |
+| --user-agents           | No           | Rotate through a list of custom User-Agents.                                                   |
+| -o, --output          | No           | Output file to save results (.json or .html).                                               |
+| --crawl                 | No           | Enable crawling to discover additional URLs.                                                   |
+| --depth                 | No           | Crawling depth. Default: 2.                                                                   |
+| --tests                 | No           | Specific tests to run (e.g., basic, union, blind). Default: all tests.                    |
+| --db                    | No           | Target a specific database.                                                                     |
+| --tbl                   | No           | Target a specific table.                                                                        |
+| --post-data             | No           | POST data in key=value&key2=value2 format. Required if --method POST is used.               |
 
 #### Test Selection
 
@@ -130,4 +170,16 @@ This tool is provided for educational purposes only and should only be used in a
 ## Credits
 
 - Inspired by the SQLmap project (https://github.com/sqlmapproject/sqlmap)
-- Developed as a university project by Omeiri, Hezil, and Rezig
+
+## Screenshots
+### 1. Scan Result
+![scan result](screenshots/result.png)
+
+<div align="center">
+
+Made with ❤️ by Omeiri, Hezil, and Rezig
+
+</div>
+
+</div>
+
