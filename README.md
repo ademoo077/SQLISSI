@@ -172,17 +172,16 @@ This tool is provided for educational purposes only and should only be used in a
 - Inspired by the SQLmap project (https://github.com/sqlmapproject/sqlmap)
 
 ## Screenshots
-### 1. Scan Result
-![scan result](screenshots/result.png)
+
 
 ### 1. Scan Result
-![scan result](screenshots/result.png)
+![scan result](/1.png)
 
 ### 2. Detailed Report
-![detailed report](screenshots/report.png)
+![detailed report](/2.png)
 
 ### 3. Settings Panel
-![settings panel](screenshots/settings.png)
+![settings panel](/3.png)
 
 <div align="center">
 
